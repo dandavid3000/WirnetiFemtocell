@@ -8,8 +8,8 @@ Please contact support@kerlink.fr to open an account to access the wiki
 
 #### Preparation
 1. Connect the gateway to your LAN network, and prepare an empty USB key (FAT-32 formatted).
-2. There are 2 ways to access the gateway configuration (`Web interface` from Kerlink wiki)
-    * Access through gateway IP address:  
+2. There are 2 ways to access the gateway configuration.
+    * `Web interface`: Access through gateway IP address  
         ```
         To connect to the web interface, enter the IP address of your gateway into your browser’s URL bar (Make sure your computer is on the same local network). The default login/password are:
         Login:admin

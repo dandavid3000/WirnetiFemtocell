@@ -1,5 +1,5 @@
 # WirnetiFemtocell
-Guide to install Wirnet iFemtocell to work with The Things Network 
+Guide to install Wirnet iFemtocell to work with The Things Network.
 
 ### Wirnet iFemtocell Wik access
 Please contact support@kerlink.fr to open an account to access the wiki

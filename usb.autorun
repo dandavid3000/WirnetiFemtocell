@@ -1,0 +1,84 @@
+#!/bin/sh
+
+USBDIR="`dirname $0`"
+
+SYSLEDPATH_IFEMTO="/sys/class/leds/led1:red:power/"
+
+#
+# Set default led behavior
+# $1: trigger
+#
+#    if trigger = timer : $2 = delay_on, $3 = delay_off
+#
+set_led() {
+	trigger="${1}"
+	on="$2"
+	off="$3"
+
+	if [ -d "${SYSLEDPATH}" ]; then
+		echo $trigger > "${SYSLEDPATH}/trigger"
+		case "$trigger" in
+			"timer")
+				echo ${on:=500} > "${SYSLEDPATH}/delay_on"
+				echo ${off:=500} > "${SYSLEDPATH}/delay_off"
+				;;
+			"none")
+				echo ${on:=0} > "${SYSLEDPATH}/brightness"
+				;;
+			*)
+				# Nothing to do
+				;;
+		esac
+	fi
+}
+
+
+deploy_packages()
+{
+	mkdir -p /user/.updates
+	for pkg in ${USBDIR}/*.ipk
+	do
+		cp ${pkg} /user/.updates/
+	done
+	sync
+}
+
+#
+# Trigger update and reboot in $1 minutes (or 'now')
+#
+trigger_update()
+{
+	REBOOT_TIMEOUT=$1
+
+	kerosd -u
+	[ ${REBOOT_TIMEOUT:=0} -ne 0 ] && shutdown -r ${REBOOT_TIMEOUT}
+}
+
+
+#####################
+#     MAIN
+#####################
+
+SYSLEDPATH=${SYSLEDPATH_IFEMTO}
+
+# Set led On
+set_led none 1
+
+# Deploy packages
+deploy_packages
+
+# Trigger Update
+trigger_update
+
+# Prepare reboot after USB unplug
+cat > /tmp/usbkey_remove << EOF
+
+# Switch off Led
+echo "none" > ${SYSLEDPATH}/trigger
+
+# Reboot Now to get Update
+reboot
+EOF
+
+# All is right, make Led blinking fast to notify User
+set_led timer 100 100

@@ -1,0 +1,5 @@
+USBklkPassword
+# Support for modified passwords
+020056_usbkey
+040001_usbkey
+092356_usbkey

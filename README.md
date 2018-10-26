@@ -54,7 +54,7 @@ Please contact support@kerlink.fr to open an account to access the wiki
     "serv_port_down": 1700,
     ```
 8. Register the gateway in the [Developer Console](https://console.thethingsnetwork.org/). You can find more information on how to register your gateway in the Console [here](https://www.thethingsnetwork.org/docs/gateways/registration.html).
-9. How to find the Gateway EUI: Open the file on your gateway `/user/spf/etc/local_conf.json`. At the bottom of this page you can find the EUI you need for registering your gateway.
+9. How to find the Gateway EUI: Open the file on your gateway `/user/spf/etc/local_conf.json`.
 
 #### References
 1. [The Things network](https://www.thethingsnetwork.org/docs/gateways/kerlink-ifemtocell/)

@@ -45,8 +45,8 @@ Please contact support@kerlink.fr to open an account to access the wiki
 3. Wait for the power LED fast blinking from green to red.
 4. Unplug the USB key.
 5. Wait for CPU reboot (Power LED is lit solid green).
-6. Connect to the gateway using SSH connection.
-7. Open the file: /user/spf/etc/global_conf.json Fill in the details below. Check this link for the right server_address. The UDP ports 1700 are used, both for outgoing and incoming traffic. You can set this UDP port in the lines serv_port_up and serv_port_down. (In some cases, firewalls block these UDP ports. Please contact your network administrator if you’re in doubt).
+6. Connect to the gateway using `SSH connection`.
+7. Open the file: `/user/spf/etc/global_conf.json` Fill in the details below. Check this link for the right server_address. The UDP ports 1700 are used, both for outgoing and incoming traffic. You can set this UDP port in the lines serv_port_up and serv_port_down. (In some cases, firewalls block these UDP ports. Please contact your network administrator if you’re in doubt).
     ```
     "gateway_conf": {
     "server_address": "router.eu.thethings.network",
@@ -55,7 +55,6 @@ Please contact support@kerlink.fr to open an account to access the wiki
     ```
 8. Register the gateway in the [Developer Console](https://console.thethingsnetwork.org/). You can find more information on how to register your gateway in the Console [here](https://www.thethingsnetwork.org/docs/gateways/registration.html).
 9. How to find the Gateway EUI: Open the file on your gateway `/user/spf/etc/local_conf.json`. At the bottom of this page you can find the EUI you need for registering your gateway.
-
 
 #### References
 1. [The Things network](https://www.thethingsnetwork.org/docs/gateways/kerlink-ifemtocell/)

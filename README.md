@@ -21,7 +21,7 @@ Please contact support@kerlink.fr to open an account to access the wiki
         ```
     * SSH connection
         ```
-        Login:admin
+        Login:root
         Password:pdmk-$serialno
         
         For example, if an iFemtoCell has 704BEc1234AB as board ID, then the root password will be pdmk-1234AB (case sensitive).
